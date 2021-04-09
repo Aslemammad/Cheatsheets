@@ -12,10 +12,10 @@ The main goal is not using `useEffect` for the component lifecycle but using it 
 
 ```jsx
 useEffect(() => {
-		// A: run whenever the deps changes
-		return {
-			// B: Optional, runs before 1, we call this the clean-up function
-		}
+	// A: run whenever the deps changes
+	return {
+		// B: Optional, runs before 1, we call this the clean-up function
+	}
 }, deps); // deps is Optional too
 ```
 
@@ -50,7 +50,7 @@ useEffect(() => {
 ```jsx
 useEffect(() => {
     // I depend on state1, state2 and prop1
-		// I'll run on every change of these dependencies
+	// I'll run on every change of these dependencies
 }, [state1, state2, prop1]);
 ```
 
@@ -60,7 +60,7 @@ I really love the "[Each Render has its own Effects](https://overreacted.io/a-co
 
 ```jsx
 useEffect(() => {
-		console.log(count)
+	console.log(count)
 }, [count]);
 ```
 
@@ -70,11 +70,11 @@ let's do some fake state changes and see what happens to the side-effect functio
 // in the first render, `count` is 0
 // The side-effect function is going to be like this
 () => {
-		console.log(0)
+	console.log(0)
 }
 // assume we change `count` to 1 (setCount(1)), next render is like that
 () => {
-		console.log(1)
+	console.log(1)
 }
 // and so on...
 ```
